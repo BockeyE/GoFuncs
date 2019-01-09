@@ -1,4 +1,4 @@
-package Quick
+package main
 
 func quickSort(values []int, left, right int) {
 	temp := values[left]
@@ -10,7 +10,7 @@ func quickSort(values []int, left, right int) {
 			j--
 		}
 		if j >= p {
-			values[p] = values[j];
+			values[p] = values[j]
 			p = j
 		}
 		for i <= p && values[i] <= temp {
@@ -29,6 +29,6 @@ func quickSort(values []int, left, right int) {
 		quickSort(values, p+1, right)
 	}
 }
-func QuickSort(values [] int) {
+func QuickSort(values []int) {
 	quickSort(values, 0, len(values)-1)
 }
