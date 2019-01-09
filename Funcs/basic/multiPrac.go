@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	s "strings"
+	"time"
 )
 
 var p = fmt.Println
@@ -33,6 +34,8 @@ func main() {
 	//获取指定索引的字符
 	p("Char:", "hello"[1])
 
+	p("=========================================")
+	p("123")
 	str := []string{"c", "a", "d", "b"}
 	sort.Strings(str)
 	fmt.Println("strings:", str)
@@ -43,4 +46,28 @@ func main() {
 
 	done := sort.IntsAreSorted(number)
 	fmt.Println("sorted : ", done)
+	p("=========================================")
+
+	jobs := make(chan int, 100)
+	results := make(chan int, 100)
+
+	for w := 1; w <= 3; w++ {
+		go work(w, jobs, results)
+	}
+	for j := 1; j <= 9; j++ {
+		jobs <- j
+	}
+	close(jobs)
+
+	for a := 1; a <= 9; a++ {
+		<-results
+	}
+}
+
+func work(id int, jobs <-chan int, results chan<- int) {
+	for j := range jobs {
+		fmt.Println("work:", id, "|process job:", j)
+		time.Sleep(time.Second)
+		results <- j * 2
+	}
 }
