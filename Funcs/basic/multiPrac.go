@@ -65,6 +65,7 @@ func main() {
 }
 
 func work(id int, jobs <-chan int, results chan<- int) {
+
 	for j := range jobs {
 		fmt.Println("work:", id, "|process job:", j)
 		time.Sleep(time.Second)
