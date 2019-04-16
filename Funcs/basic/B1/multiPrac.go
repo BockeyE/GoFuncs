@@ -1,4 +1,4 @@
-package main
+package B1
 
 import (
 	"fmt"
