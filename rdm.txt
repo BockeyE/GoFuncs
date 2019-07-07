@@ -1,2 +1,4 @@
 第三方包，如果下载到本地的话，
-放置到 GPROOT中的src文件夹下，对应导包路径的文件路径中。
+放置到 GPROOT/GOPAth中的src文件夹下，对应导包路径的文件路径中。
+直接去github.com/selenium-master……等地址，下载zip源码包（注意不是release版本，
+release版本有可能有缺失，直接down源码zip是没问题的）
