@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	A := nums1
@@ -9,6 +12,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 		B = nums1
 		A = nums2
 	}
+	fmt.Println("test")
 	m := len(A)
 	n := len(B)
 	iMin := 0
