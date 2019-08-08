@@ -44,6 +44,7 @@ func convert(s string, numRows int) string {
 		fmt.Println(ar.Len())
 		for i := ar.Front(); i != nil; i = i.Next() {
 			c, _ := i.Value.(string)
+			// 这个是go中的跨类型强转，go要求必须用断言，第二个变量是一个bool，用来判断是否强转成功，可以进行判断控制
 			buider.WriteString(c)
 		}
 	}
