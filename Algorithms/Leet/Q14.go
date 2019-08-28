@@ -22,6 +22,7 @@ func getTwo(s1, s2 string) string {
 	if s1 == s2 {
 		return s1
 	}
+
 	end := 0
 	for end < len(s1) && end < len(s2) {
 		if s1[end] == s2[end] {
