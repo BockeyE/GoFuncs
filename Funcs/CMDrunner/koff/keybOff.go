@@ -8,7 +8,6 @@ import (
 )
 
 func kbOff() {
-
 	cmd := exec.Command("cmd", "/C", "sc", "config", "i8042prt", "start=", "disabled")
 	output, _ := cmd.CombinedOutput()
 	fmt.Println(string(output))
